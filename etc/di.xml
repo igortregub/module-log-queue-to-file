@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="IgorTregub\LogQueueToFile\Model\VirtualLoggerHandler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/add-to-cart.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="IgorTregub\LogQueueToFile\Model\VirtualLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">IgorTregub\LogQueueToFile\Model\VirtualLoggerHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="IgorTregub\LogQueueToFile\Model\Handler">
+        <arguments>
+            <argument name="logger" xsi:type="object">IgorTregub\LogQueueToFile\Model\VirtualLogger</argument>
+        </arguments>
+    </type>
+</config>
