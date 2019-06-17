@@ -2,5 +2,3 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
     <consumer name="AddToCartConsumer" queue="add.to.cart.queue" connection="amqp" handler="IgorTregub\LogQueueToFile\Model\Handler::execute"/>
 </config>
-
-<!--        consumerInstance="IgorTregub\LogQueueToFile\Model\Consumer"-->
