@@ -15,7 +15,7 @@ class Publisher
     /**
      * Queue topic name
      */
-    private const TOPIC_NAME = 'add.to.cart.topic';
+    private const TOPIC_NAME = 'log.add.product.to.cart.action.topic';
 
     /**
      * @var PublisherInterface
