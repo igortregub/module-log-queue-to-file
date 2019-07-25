@@ -5,7 +5,7 @@
             <argument name="fileName" xsi:type="string">/var/log/add-to-cart.log</argument>
         </arguments>
     </virtualType>
-    <virtualType name="IgorTregub\LogQueueToFile\Model\VirtualLogger" type="Magento\Framework\Logger\Monolog">
+    <virtualType name="VirtualLogger" type="Magento\Framework\Logger\Monolog">
         <arguments>
             <argument name="handlers" xsi:type="array">
                 <item name="system" xsi:type="object">IgorTregub\LogQueueToFile\Model\VirtualLoggerHandler</item>
@@ -14,7 +14,7 @@
     </virtualType>
     <type name="IgorTregub\LogQueueToFile\Model\Handler">
         <arguments>
-            <argument name="logger" xsi:type="object">IgorTregub\LogQueueToFile\Model\VirtualLogger</argument>
+            <argument name="logger" xsi:type="object">VirtualLogger</argument>
         </arguments>
     </type>
 </config>
